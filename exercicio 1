@@ -1,0 +1,32 @@
+1. Desenvolva um programa que leia uma matriz quadrada de números inteiros de dimensão (4×4), e
+então coloque em um outro vetor de 4 posições o maior valor encontrado na coluna da matriz cujo
+índice é o mesmo do vetor, ou seja, o maior valor da coluna zero da matriz na posição zero do
+vetor e assim por diante. Mostre então a matriz, o vetor e a média aritmética do vetor.
+'''
+matriz = []
+vetor = []
+cont = 0
+i = 0
+for linha in range(0,4):
+    linha_matriz = []
+    for coluna in range(0,4):
+        valor = int(input(f'Insira o valor da {linha+1}º linha e {coluna+1}º coluna:'))
+        linha_matriz.append(valor)
+    matriz.append(linha_matriz)
+while i < 4:
+    if matriz[0][i] > matriz[1][i] and matriz[0][i] > matriz[2][i] and matriz[0][i] > matriz[3][i]:
+        vetor.append(matriz[0][i])
+    elif matriz[1][i] > matriz[0][i] and matriz[1][i] > matriz[2][i] and matriz[1][i] > matriz[3][i]:
+        vetor.append(matriz[1][i])
+    elif matriz[2][i] > matriz[0][i] and matriz[2][i] > matriz[1][i] and matriz[2][i] > matriz[3][i]:
+        vetor.append(matriz[2][i])
+    else:
+        vetor.append(matriz[3][i])
+    i += 1
+
+for linha in range(len(matriz)):
+    for coluna in range(len(matriz[0])):
+        print(matriz[linha] [coluna],end=' ')
+    print('')
+
+print('Maiores valores de cada coluna:',vetor,'Média dos maiores valores:' , (vetor[0]+vetor[1]+vetor[2]+vetor[3])/4)
