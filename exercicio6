@@ -11,3 +11,9 @@ for cidade in cidades:
     print(indice,cidade)
     indice += 1
 print('-=' * 30)
+
+
+Origem = int(input('Local de Origem?'))
+Destino = int(input('Local de Destino'))
+
+print(f'A distancia entre as cidades é de {matriz[Origem][Destino]}Km')
